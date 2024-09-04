@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol HomeCellDelegate: AnyObject {
+    func didSelectMovie(_ movie: Result)
+}
+
 class HomeCell: UICollectionViewCell {
+    
+    weak var delegate: HomeCellDelegate?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet private weak var collection: UICollectionView!
@@ -39,6 +45,11 @@ extension HomeCell: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 168, height: collectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedMovie = movieItems[indexPath.item]
+        delegate?.didSelectMovie(selectedMovie)
     }
     
 }

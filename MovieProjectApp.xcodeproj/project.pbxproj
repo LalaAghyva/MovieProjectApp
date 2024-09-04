@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27012DDD2C853D8E00E81EE0 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27012DDC2C853D8E00E81EE0 /* MovieDetailVC.swift */; };
 		270877F62C5BA63200001FA6 /* ActorMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270877F52C5BA63200001FA6 /* ActorMovieController.swift */; };
 		270877F92C5BD6D200001FA6 /* PeopleManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270877F82C5BD6D200001FA6 /* PeopleManagerProtocol.swift */; };
 		270877FB2C5BD77300001FA6 /* PopularPeople.json in Resources */ = {isa = PBXBuildFile; fileRef = 270877FA2C5BD77300001FA6 /* PopularPeople.json */; };
@@ -40,6 +41,7 @@
 		27878FF02C5A97030090B9EE /* PeopleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27878FEF2C5A97030090B9EE /* PeopleManager.swift */; };
 		27878FF22C5A971A0090B9EE /* PeopleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27878FF12C5A971A0090B9EE /* PeopleHelper.swift */; };
 		27878FF42C5A9A1F0090B9EE /* PeopleMovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27878FF32C5A9A1F0090B9EE /* PeopleMovieList.swift */; };
+		27898FC52C86763C00B6DE63 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27898FC42C86763C00B6DE63 /* CustomView.swift */; };
 		27932BEC2C54102A0054FBD9 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27932BEB2C54102A0054FBD9 /* MovieCell.swift */; };
 		279A2D152C6121F800E9362F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A2D142C6121F800E9362F /* Coordinator.swift */; };
 		279A2D172C61225C00E9362F /* PeopleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A2D162C61225C00E9362F /* PeopleCoordinator.swift */; };
@@ -61,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27012DDC2C853D8E00E81EE0 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
 		270877F52C5BA63200001FA6 /* ActorMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorMovieController.swift; sourceTree = "<group>"; };
 		270877F82C5BD6D200001FA6 /* PeopleManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleManagerProtocol.swift; sourceTree = "<group>"; };
 		270877FA2C5BD77300001FA6 /* PopularPeople.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PopularPeople.json; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 		27878FEF2C5A97030090B9EE /* PeopleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleManager.swift; sourceTree = "<group>"; };
 		27878FF12C5A971A0090B9EE /* PeopleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleHelper.swift; sourceTree = "<group>"; };
 		27878FF32C5A9A1F0090B9EE /* PeopleMovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleMovieList.swift; sourceTree = "<group>"; };
+		27898FC42C86763C00B6DE63 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		27932BEB2C54102A0054FBD9 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		279A2D142C6121F800E9362F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		279A2D162C61225C00E9362F /* PeopleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCoordinator.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 		2768A6EF2C52F2DA00AA1208 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				27012DDC2C853D8E00E81EE0 /* MovieDetailVC.swift */,
+				27898FC42C86763C00B6DE63 /* CustomView.swift */,
 				2775D7972C52C2DC00F19646 /* HomeViewController.swift */,
 				2775D7992C52C2EC00F19646 /* HomeViewModel.swift */,
 				2768A6ED2C52E61000AA1208 /* Home.swift */,
@@ -500,12 +506,14 @@
 				27878FED2C5A769C0090B9EE /* HomeHelper.swift in Sources */,
 				27878FF02C5A97030090B9EE /* PeopleManager.swift in Sources */,
 				27878FF22C5A971A0090B9EE /* PeopleHelper.swift in Sources */,
+				27898FC52C86763C00B6DE63 /* CustomView.swift in Sources */,
 				27932BEC2C54102A0054FBD9 /* MovieCell.swift in Sources */,
 				2747A7812C5CD19A00E109DB /* String+ Extension.swift in Sources */,
 				27EF88952C6D6E9100A1A355 /* OperationClass.swift in Sources */,
 				2741FC712C5927510052CC16 /* TopImageBottomLabel.swift in Sources */,
 				2768A6F12C52F35B00AA1208 /* HomeCell.swift in Sources */,
 				2741FC742C592B1F0052CC16 /* People.swift in Sources */,
+				27012DDD2C853D8E00E81EE0 /* MovieDetailVC.swift in Sources */,
 				2741FC6D2C5926130052CC16 /* PeopleViewController.swift in Sources */,
 				2775D79D2C52C33400F19646 /* NetworkManager.swift in Sources */,
 				270877F62C5BA63200001FA6 /* ActorMovieController.swift in Sources */,

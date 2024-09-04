@@ -109,13 +109,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcw-Or-l0z">
-                                <rect key="frame" x="24" y="112" width="86" height="34"/>
+                                <rect key="frame" x="24" y="112.00000000000001" width="86" height="33.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5eD-Ye-NKh">
-                                <rect key="frame" x="0.0" y="170" width="393" height="599"/>
+                                <rect key="frame" x="0.0" y="169.66666666666669" width="393" height="599.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="24" minimumInteritemSpacing="24" id="Lx1-R7-fVe">
                                     <size key="itemSize" width="393" height="128"/>
@@ -232,6 +232,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipb-a8-eDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="753.43511450381675" y="-1317.605633802817"/>
+        </scene>
+        <!--Movie DetailVC-->
+        <scene sceneID="DyE-r7-Yq7">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g0d-9s-35Q" customClass="MovieDetailVC" customModule="MovieProjectApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YHY-HY-XRa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="o3u-5m-gxh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nfu-HU-5Xf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BdG-I1-rx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2599.2366412213742" y="-1318.3098591549297"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="V6N-SK-dcj">
@@ -411,6 +427,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MfZ-df-6Z8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-140" y="151"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jxq-QK-Cdi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mgw-e2-AE2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aHa-5G-O7x">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="g0d-9s-35Q" kind="relationship" relationship="rootViewController" id="bPV-NN-0me"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N0z-IX-5IW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672.5190839694656" y="-1318.3098591549297"/>
         </scene>
     </scenes>
     <resources>

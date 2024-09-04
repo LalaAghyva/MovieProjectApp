@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HomeCellDelegate {
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -18,6 +18,16 @@ class HomeViewController: UIViewController {
 
         configViewModel()
 //        configureUI()
+    }
+    
+    func didSelectMovie(_ movie: Result) {
+        let movieDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(MovieDetailVC.self)") as! MovieDetailVC
+        movieDetailVC.movie = movie // MovieDetailVC'ye ilgili veriyi gönderin
+        
+        // Tab barın gizlenmesi
+        movieDetailVC.hidesBottomBarWhenPushed = true
+
+        navigationController?.pushViewController(movieDetailVC, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +60,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
         cell.configure(data: viewModel.category[indexPath.item])
+        cell.delegate = self // Burada delegate'i ayarlıyoruz
         return cell
     }
     
