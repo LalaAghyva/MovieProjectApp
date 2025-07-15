@@ -9,7 +9,7 @@ import UIKit
 
 class MovieDetailVC: UIViewController {
     
-    var movie: Result?
+//    var movie: Result?
 
     let scrollView = UIScrollView()
     let contentView = UIView()
@@ -28,6 +28,8 @@ class MovieDetailVC: UIViewController {
     
     let textImageView2 = CustomView()
     let textImageView3 = CustomView()
+    
+    var viewModel: MovieDetailViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +45,7 @@ class MovieDetailVC: UIViewController {
     }
         
     @objc private func iconButtonTapped() {
-        let textToShare = movie?.overview
+        let textToShare = viewModel?.movie.overview
         let urlToShare = URL(string: "https://example.com")
         let imageToShare = UIImage(named: "shareImage")
         
@@ -77,8 +79,8 @@ class MovieDetailVC: UIViewController {
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
         scrollView.addSubview(contentView)
@@ -94,7 +96,7 @@ class MovieDetailVC: UIViewController {
     
     func setUpPosterImageView() {
         contentView.addSubview(posterImageView)
-        posterImageView.loadUrl(urlStr: movie?.backdropPath ?? "")
+        posterImageView.loadUrl(urlStr: viewModel?.movie.backdropPath ?? "")
         posterImageView.contentMode = .scaleAspectFill
         posterImageView.clipsToBounds = true
         posterImageView.layer.cornerRadius = 16
@@ -110,7 +112,7 @@ class MovieDetailVC: UIViewController {
     
     func setUpMovieNameLabel() {
         contentView.addSubview(movieNameLabel)
-        movieNameLabel.text = movie?.title
+        movieNameLabel.text = viewModel?.movie.title
         movieNameLabel.font = UIFont(name: "Poppins", size: 24)
         movieNameLabel.translatesAutoresizingMaskIntoConstraints = false
         movieNameLabel.numberOfLines = 0
@@ -147,7 +149,7 @@ class MovieDetailVC: UIViewController {
             textImageView2.widthAnchor.constraint(equalToConstant: 88)
         ])
         
-        textImageView2.configure(withTitle: "\(movie?.voteCount.map{ String($0).prefix(4)} ?? "")", imageName: "clock")
+        textImageView2.configure(withTitle: "\(viewModel?.movie.voteCount.map{ String($0).prefix(4)} ?? "")", imageName: "clock")
     }
     
     func setUpTextImageView3() {
@@ -161,7 +163,7 @@ class MovieDetailVC: UIViewController {
             textImageView3.widthAnchor.constraint(equalToConstant: 88)
         ])
         
-        textImageView3.configure(withTitle: "\(movie?.voteAverage.map{ String($0).prefix(4)} ?? "")/10", imageName: "star")
+        textImageView3.configure(withTitle: "\(viewModel?.movie.voteAverage.map{ String($0).prefix(4)} ?? "")/10", imageName: "star")
     }
     
     func setupDetailsSegmentedControl() {
@@ -188,7 +190,7 @@ class MovieDetailVC: UIViewController {
     
     func setUpMovieDetailLabel() {
         contentView.addSubview(movieDetailLabel)
-        movieDetailLabel.text = "\(movie?.originalTitle ?? "")\n\(movie?.overview ?? "")"
+        movieDetailLabel.text = "\(viewModel?.movie.originalTitle ?? "")\n\(viewModel?.movie.overview ?? "")"
         movieDetailLabel.font = UIFont(name: "Poppins", size: 20)
         movieDetailLabel.translatesAutoresizingMaskIntoConstraints = false
         movieDetailLabel.numberOfLines = 0

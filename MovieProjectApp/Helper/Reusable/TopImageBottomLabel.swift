@@ -21,7 +21,7 @@ class TopImageBottomLabel: UICollectionViewCell {
         topImage.layer.cornerRadius = 20
     }
     
-    func configure(data: TopImageBottomLabelProtocol) {
+    func configure(data: ListModelProtocol) {
         bottomLabel.text = data.titleText
         topImage.loadUrl(urlStr: data.imagerUrl)
     }
@@ -35,4 +35,5 @@ class TopImageBottomLabel: UICollectionViewCell {
 //        bottomLabel.text = data.title
 //        topImage.loadUrl(urlStr: data.posterPath ?? "")
 //    }
+    
 }

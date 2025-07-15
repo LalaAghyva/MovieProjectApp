@@ -1,16 +1,16 @@
 //
-//  Home.swift
+//  TVShow.swift
 //  MovieProjectApp
 //
-//  Created by Lala on 25.07.24.
+//  Created by Lala on 21.09.24.
 //
 
 import Foundation
 
-// MARK: - Welcome
-struct Welcome: Codable {
+// MARK: - TVShow
+struct TVShow: Codable {
     let page: Int?
-    let results: [Result]?
+    let results: [TVShowItem]?
     let totalPages, totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -20,15 +20,16 @@ struct Welcome: Codable {
     }
 }
 
-// MARK: - Result
-struct Result: Codable, TopImageBottomLabelProtocol, ListModelProtocol {
+// MARK: - TVShowItem
+struct TVShowItem: Codable, TopImageBottomLabelProtocol, ListModelProtocol {
     var itemId: Int {
         id ?? 0
     }
     
     var titleText: String {
-        title ?? ""
+        name ?? ""
     }
+    
     var imagerUrl: String {
         posterPath ?? ""
     }
@@ -37,10 +38,11 @@ struct Result: Codable, TopImageBottomLabelProtocol, ListModelProtocol {
     let backdropPath: String?
     let genreIDS: [Int]?
     let id: Int?
-    let originalTitle, overview: String?
+    let originCountry: [String]?
+    let originalLanguage, originalName, overview: String?
     let popularity: Double?
-    let posterPath, releaseDate, title: String?
-    let video: Bool?
+    let posterPath: String?
+    let firstAirDate, name: String?
     let voteAverage: Double?
     let voteCount: Int?
 
@@ -49,13 +51,14 @@ struct Result: Codable, TopImageBottomLabelProtocol, ListModelProtocol {
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
         case id
-        case originalTitle = "original_title"
+        case originCountry = "origin_country"
+        case originalLanguage = "original_language"
+        case originalName = "original_name"
         case overview, popularity
         case posterPath = "poster_path"
-        case releaseDate = "release_date"
-        case title, video
+        case firstAirDate = "first_air_date"
+        case name
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
 }
-

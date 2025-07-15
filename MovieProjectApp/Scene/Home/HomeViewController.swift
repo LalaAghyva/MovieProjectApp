@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController, HomeCellDelegate {
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
+
     
     var viewModel = HomeViewModel()
 
@@ -20,13 +21,25 @@ class HomeViewController: UIViewController, HomeCellDelegate {
 //        configureUI()
     }
     
+//    @IBAction func sellAllButtonTapped(_ sender: Any) {
+//        let controller = storyboard?.instantiateViewController(identifier: "ListController") as! ListController
+//        
+//        let allResults = viewModel.category.flatMap { $0.items }
+//        
+//        controller.onDataReceive = { [weak self] in
+//            return allResults
+//        }
+//        
+//        controller.hidesBottomBarWhenPushed = true
+//        navigationController?.pushViewController(controller, animated: true)
+//        
+//    }
+    
     func didSelectMovie(_ movie: Result) {
         let movieDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(MovieDetailVC.self)") as! MovieDetailVC
-        movieDetailVC.movie = movie // MovieDetailVC'ye ilgili veriyi gönderin
-        
-        // Tab barın gizlenmesi
+//        movieDetailVC.movie = movie
+        movieDetailVC.viewModel = MovieDetailViewModel(movie: movie)
         movieDetailVC.hidesBottomBarWhenPushed = true
-
         navigationController?.pushViewController(movieDetailVC, animated: true)
     }
     
@@ -60,7 +73,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
         cell.configure(data: viewModel.category[indexPath.item])
-        cell.delegate = self // Burada delegate'i ayarlıyoruz
+        cell.delegate = self
         return cell
     }
     

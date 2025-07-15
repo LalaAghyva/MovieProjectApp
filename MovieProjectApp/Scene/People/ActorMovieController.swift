@@ -38,7 +38,7 @@ extension ActorMovieController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TopImageBottomLabel
-        cell.configure(data: viewModel.movieItems[indexPath.item])
+//        cell.configure(data: viewModel.movieItems[indexPath.item])
         return cell
     }
     

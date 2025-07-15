@@ -21,7 +21,11 @@ struct People: Codable {
 }
 
 // MARK: - PeopleResult
-struct PeopleResult: Codable, TopImageBottomLabelProtocol {
+struct PeopleResult: Codable, TopImageBottomLabelProtocol, ListModelProtocol {
+    var itemId: Int {
+        id ?? 0
+    }
+    
     var titleText: String {
         name ?? ""
     }

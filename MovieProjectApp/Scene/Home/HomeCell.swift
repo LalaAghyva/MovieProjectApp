@@ -11,6 +11,7 @@ protocol HomeCellDelegate: AnyObject {
     func didSelectMovie(_ movie: Result)
 }
 
+
 class HomeCell: UICollectionViewCell {
     
     weak var delegate: HomeCellDelegate?
@@ -20,6 +21,7 @@ class HomeCell: UICollectionViewCell {
     
     private var movieItems = [Result]()
     var cellId = "\(TopImageBottomLabel.self)"
+    
 
     func configure(data: Category) {
         movieItems = data.items
@@ -27,9 +29,26 @@ class HomeCell: UICollectionViewCell {
         collection.reloadData()
     }
     
+//    @IBAction func sellAllButtonTapped(_ sender: Any) {
+//        let controller = storyboard?.instantiateViewController(identifier: "ListController") as! ListController
+//        
+//        let allResults = viewModel.category.flatMap { $0.items }
+//        
+//        controller.onDataReceive = { [weak self] in
+//            return allResults
+//        }
+//        
+//        controller.hidesBottomBarWhenPushed = true
+//        navigationController?.pushViewController(controller, animated: true)
+//        
+//    }
+    
+    
     override func layoutSubviews() {
         collection.register(UINib(nibName: cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
     }
+    
+    
 }
 
 extension HomeCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
